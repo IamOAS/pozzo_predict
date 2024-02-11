@@ -10,7 +10,7 @@ class AuthViewModel extends BaseViewModel {
   }
 
   void showPasswordInLoginView() {
-    isPasswordShownInSignUpView = !isPasswordShownInSignUpView;
+    isPasswordShownInLoginView = !isPasswordShownInLoginView;
     notifyListeners();
   }
 

@@ -13,7 +13,7 @@ class AuthView extends StatefulWidget {
 }
 
 class _AuthViewState extends State<AuthView> {
-  final PageController _pageController = PageController();
+  final PageController _pageController = PageController(initialPage: 1);
 
   @override
   void dispose() {
