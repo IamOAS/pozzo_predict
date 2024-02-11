@@ -17,13 +17,24 @@ class SignUpView extends StatefulWidget {
 }
 
 class _SignUpViewState extends State<SignUpView> {
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController(text: 'olonasheriffdeenadeola@gmail.com');
+  final TextEditingController _passwordController = TextEditingController(text: 'password');
 
   final FocusNode _emailFocusNode = FocusNode();
   final FocusNode _passwordFocusNode = FocusNode();
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  Future<void> signUp() async {
+  await widget.model.signUp(
+      context: context,
+      email: _emailController.text.trim(),
+      password: _passwordController.text.trim(),
+      pageController: widget.pageController,
+    );
+
+  
+  }
 
   @override
   void dispose() {
@@ -94,7 +105,7 @@ class _SignUpViewState extends State<SignUpView> {
                                   '"Unlocking the Future: Predicting Pozzolanic Cement Concrete Strength with Precision!"',
                                   style: TextStyle(
                                     fontSize: 60.sp,
-                                    fontFamily: GoogleFonts.inter().fontFamily,
+                                    fontFamily: customFontFamily,
                                     fontWeight: FontWeight.w700,
                                     color: const Color(0xffffffff),
                                   ),
@@ -128,9 +139,6 @@ class _SignUpViewState extends State<SignUpView> {
                               secondFocusNode: _passwordFocusNode,
                               keyboardType: TextInputType.emailAddress,
                               hintText: 'Email address',
-                              onChanged: (value) {
-                                setState(() {});
-                              },
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
                                   return 'Type in your email address';
@@ -166,9 +174,6 @@ class _SignUpViewState extends State<SignUpView> {
                                         size: 20,
                                       ),
                               ),
-                              onChanged: (value) {
-                                setState(() {});
-                              },
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
                                   return 'Type in your password';
@@ -180,26 +185,41 @@ class _SignUpViewState extends State<SignUpView> {
                             ),
                             32.szbh,
                             // Sign up button
-                            const CustomButton(text: 'Sign Up'),
+                            CustomListenableButton(
+                              formKey: _formKey,
+                              isLoading: widget.model.isBusy,
+                              textEditingControllers: [
+                                _emailController,
+                                _passwordController,
+                              ],
+                              text: 'Sign Up',
+                              onTap: () async {
+                                await signUp();
+                              },
+                            ),
                             24.szbh,
                             // Already have an account? Sign in
                             Row(
                               children: [
-                                Text(
-                                  'Already have an account?',
-                                  style: CustomTextStyle.small.regular.withColor(
-                                    const Color(0xFF645C5C),
+                                Flexible(
+                                  child: Text(
+                                    'Already have an account?',
+                                    style: CustomTextStyle.small.regular.withColor(
+                                      const Color(0xFF645C5C),
+                                    ),
                                   ),
                                 ),
                                 5.szbw,
-                                InkWell(
-                                  onTap: () {
-                                    widget.pageController.jumpToPage(1);
-                                  },
-                                  child: Text(
-                                    'Sign in',
-                                    style: CustomTextStyle.small.semiBold.withColor(
-                                      const Color(0xFFFBAF1B),
+                                Flexible(
+                                  child: InkWell(
+                                    onTap: () {
+                                      widget.pageController.jumpToPage(1);
+                                    },
+                                    child: Text(
+                                      'Sign in',
+                                      style: CustomTextStyle.small.semiBold.withColor(
+                                        const Color(0xFFFBAF1B),
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -238,9 +258,6 @@ class _SignUpViewState extends State<SignUpView> {
                   secondFocusNode: _passwordFocusNode,
                   keyboardType: TextInputType.emailAddress,
                   hintText: 'Email address',
-                  onChanged: (value) {
-                    setState(() {});
-                  },
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Type in your email address';
@@ -276,9 +293,6 @@ class _SignUpViewState extends State<SignUpView> {
                             size: 20,
                           ),
                   ),
-                  onChanged: (value) {
-                    setState(() {});
-                  },
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Type in your password';
@@ -290,27 +304,42 @@ class _SignUpViewState extends State<SignUpView> {
                 ),
                 32.szbh,
                 // Sign up button
-                const CustomButton(text: 'Sign Up'),
+                CustomListenableButton(
+                  formKey: _formKey,
+                  isLoading: widget.model.isBusy,
+                  textEditingControllers: [
+                    _emailController,
+                    _passwordController,
+                  ],
+                  text: 'Sign Up',
+                  onTap: () async {
+                    await signUp();
+                  },
+                ),
                 24.szbh,
                 // Already have an account? Sign in
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      'Already have an account?',
-                      style: CustomTextStyle.small.regular.withColor(
-                        const Color(0xFF645C5C),
+                    Flexible(
+                      child: Text(
+                        'Already have an account?',
+                        style: CustomTextStyle.small.regular.withColor(
+                          const Color(0xFF645C5C),
+                        ),
                       ),
                     ),
                     5.szbw,
-                    InkWell(
-                      onTap: () {
-                        widget.pageController.jumpToPage(1);
-                      },
-                      child: Text(
-                        'Sign in',
-                        style: CustomTextStyle.small.semiBold.withColor(
-                          const Color(0xFFFBAF1B),
+                    Flexible(
+                      child: InkWell(
+                        onTap: () {
+                          widget.pageController.jumpToPage(1);
+                        },
+                        child: Text(
+                          'Sign in',
+                          style: CustomTextStyle.small.semiBold.withColor(
+                            const Color(0xFFFBAF1B),
+                          ),
                         ),
                       ),
                     ),

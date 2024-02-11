@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "500140532547",
+    "project_id": "pozzo-predict",
+    "storage_bucket": "pozzo-predict.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:500140532547:android:317154ad7a50bc6a5605f6",
+        "android_client_info": {
+          "package_name": "com.adeola.pozzoPredict"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCg6gvujdqi87sEkF5Ewx4ugLYfePlwZ1k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

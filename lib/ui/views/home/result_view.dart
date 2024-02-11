@@ -126,7 +126,7 @@ class ResultPageLandscape extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
-                    fontFamily: GoogleFonts.inter().fontFamily,
+                    fontFamily: customFontFamily,
                     color: const Color(0xFF291515),
                   ),
                 ),
@@ -199,7 +199,7 @@ class ResultPagePortrait extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
-                    fontFamily: GoogleFonts.inter().fontFamily,
+                    fontFamily: customFontFamily,
                     color: const Color(0xFF291515),
                   ),
                 ),

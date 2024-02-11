@@ -3,22 +3,22 @@ import 'package:pozzo_predict/core/utils/exports.dart';
 class CustomTextStyle {
   static TextStyle h1 = TextStyle(
     fontSize: 64,
-    fontFamily: GoogleFonts.inter().fontFamily,
+    fontFamily: customFontFamily,
   );
 
   static TextStyle h2 = TextStyle(
     fontSize: 36,
-    fontFamily: GoogleFonts.inter().fontFamily,
+    fontFamily: customFontFamily,
   );
 
   static TextStyle medium = TextStyle(
     fontSize: 16,
-    fontFamily: GoogleFonts.inter().fontFamily,
+    fontFamily: customFontFamily,
   );
 
   static TextStyle small = TextStyle(
     fontSize: 14,
-    fontFamily: GoogleFonts.inter().fontFamily,
+    fontFamily: customFontFamily,
   );
 }
 

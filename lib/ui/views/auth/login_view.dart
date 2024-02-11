@@ -17,13 +17,22 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController(text: 'olonasheriffdeenadeola@gmail.com');
+  final TextEditingController _passwordController = TextEditingController(text: 'password');
 
   final FocusNode _emailFocusNode = FocusNode();
   final FocusNode _passwordFocusNode = FocusNode();
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  Future<void> signIn() async {
+    await widget.model.signIn(
+      context: context,
+      email: _emailController.text.trim(),
+      password: _passwordController.text.trim(),
+      pageController: widget.pageController,
+    );
+  }
 
   @override
   void dispose() {
@@ -93,7 +102,7 @@ class _LoginViewState extends State<LoginView> {
                                   '"Getting the best result Structures with Pozzolanic Strength Predictions"',
                                   style: TextStyle(
                                     fontSize: 60.sp,
-                                    fontFamily: GoogleFonts.inter().fontFamily,
+                                    fontFamily: customFontFamily,
                                     fontWeight: FontWeight.w700,
                                     color: const Color(0xffffffff),
                                   ),
@@ -127,9 +136,6 @@ class _LoginViewState extends State<LoginView> {
                               secondFocusNode: _passwordFocusNode,
                               keyboardType: TextInputType.emailAddress,
                               hintText: 'Email address',
-                              onChanged: (value) {
-                                setState(() {});
-                              },
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
                                   return 'Type in your email address';
@@ -165,9 +171,6 @@ class _LoginViewState extends State<LoginView> {
                                         size: 20,
                                       ),
                               ),
-                              onChanged: (value) {
-                                setState(() {});
-                              },
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
                                   return 'Type in your password';
@@ -179,10 +182,16 @@ class _LoginViewState extends State<LoginView> {
                             ),
                             32.szbh,
                             // Login button
-                            CustomButton(
+                            CustomListenableButton(
+                              formKey: _formKey,
+                              isLoading: widget.model.isBusy,
+                              textEditingControllers: [
+                                _emailController,
+                                _passwordController,
+                              ],
                               text: 'Login',
-                              onTap: () {
-                                widget.pageController.jumpToPage(2);
+                              onTap: () async {
+                                await signIn();
                               },
                             ),
                             24.szbh,
@@ -243,9 +252,6 @@ class _LoginViewState extends State<LoginView> {
                   secondFocusNode: _passwordFocusNode,
                   keyboardType: TextInputType.emailAddress,
                   hintText: 'Email address',
-                  onChanged: (value) {
-                    setState(() {});
-                  },
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Type in your email address';
@@ -281,9 +287,6 @@ class _LoginViewState extends State<LoginView> {
                             size: 20,
                           ),
                   ),
-                  onChanged: (value) {
-                    setState(() {});
-                  },
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Type in your password';
@@ -295,10 +298,16 @@ class _LoginViewState extends State<LoginView> {
                 ),
                 32.szbh,
                 // Login button
-                CustomButton(
+                CustomListenableButton(
+                  formKey: _formKey,
+                  isLoading: widget.model.isBusy,
+                  textEditingControllers: [
+                    _emailController,
+                    _passwordController,
+                  ],
                   text: 'Login',
-                  onTap: () {
-                    widget.pageController.jumpToPage(2);
+                  onTap: () async {
+                    await signIn();
                   },
                 ),
                 24.szbh,

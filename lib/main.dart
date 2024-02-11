@@ -1,8 +1,18 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:pozzo_predict/core/utils/exports.dart';
+import 'package:pozzo_predict/firebase_options.dart';
 import 'package:pozzo_predict/ui/views/dashboard.dart';
+
+String? customFontFamily = GoogleFonts.inter().fontFamily;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  await setupLocator();
 
   runApp(
     const App(),

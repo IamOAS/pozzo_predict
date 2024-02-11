@@ -4,7 +4,7 @@ import 'dart:math';
 final ThemeData appThemeData = ThemeData(
   brightness: Brightness.dark,
   primaryColor: const Color(0xFF008042),
-  fontFamily: GoogleFonts.inter().fontFamily,
+  fontFamily: customFontFamily,
   textSelectionTheme: const TextSelectionThemeData(
     cursorColor: Color(0xFF008042),
   ),

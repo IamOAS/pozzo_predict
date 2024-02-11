@@ -13,3 +13,8 @@ export 'package:pozzo_predict/core/extensions/asset_extension.dart';
 export 'package:pozzo_predict/ui/widgets/size_x_svg.dart';
 export 'package:pozzo_predict/core/utils/theme.dart';
 export 'package:pozzo_predict/core/extensions/text_style_extension.dart';
+export 'package:pozzo_predict/core/utils/locator.dart';
+export 'package:firebase_auth/firebase_auth.dart';
+export 'package:pozzo_predict/main.dart';
+export 'package:pozzo_predict/core/utils/alert.dart';
+export 'package:pozzo_predict/core/auth_exception_handler.dart';

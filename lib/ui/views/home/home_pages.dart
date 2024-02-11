@@ -92,7 +92,7 @@ class _HomePageLandscapeState extends State<HomePageLandscape> {
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w600,
-                    fontFamily: GoogleFonts.inter().fontFamily,
+                    fontFamily: customFontFamily,
                     color: const Color(0xFF291515),
                   ),
                 ),
@@ -114,9 +114,6 @@ class _HomePageLandscapeState extends State<HomePageLandscape> {
                         contentPadding: 16.hp,
                         keyboardType: TextInputType.text,
                         hintText: 'Select e.g flyash',
-                        onChanged: (value) {
-                          setState(() {});
-                        },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Pozzolans is required';
@@ -136,9 +133,6 @@ class _HomePageLandscapeState extends State<HomePageLandscape> {
                         contentPadding: 16.hp,
                         keyboardType: TextInputType.text,
                         hintText: 'Select e.g flyash',
-                        onChanged: (value) {
-                          setState(() {});
-                        },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Curing Age is required';
@@ -163,9 +157,6 @@ class _HomePageLandscapeState extends State<HomePageLandscape> {
                         contentPadding: 16.hp,
                         keyboardType: TextInputType.text,
                         hintText: 'Select e.g 3.0',
-                        onChanged: (value) {
-                          setState(() {});
-                        },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Water/cement ratio is required';
@@ -185,9 +176,6 @@ class _HomePageLandscapeState extends State<HomePageLandscape> {
                         contentPadding: 16.hp,
                         keyboardType: TextInputType.text,
                         hintText: 'e.g 100',
-                        onChanged: (value) {
-                          setState(() {});
-                        },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Weight of fine aggregate used (kg/m^3) is required';
@@ -212,9 +200,6 @@ class _HomePageLandscapeState extends State<HomePageLandscape> {
                         contentPadding: 16.hp,
                         keyboardType: TextInputType.text,
                         hintText: 'e.g 100',
-                        onChanged: (value) {
-                          setState(() {});
-                        },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Weight of cement (kg/m^3) is required';
@@ -234,9 +219,6 @@ class _HomePageLandscapeState extends State<HomePageLandscape> {
                         contentPadding: 16.hp,
                         keyboardType: TextInputType.text,
                         hintText: 'e.g 100',
-                        onChanged: (value) {
-                          setState(() {});
-                        },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Weight of coarse aggregate used (kg/m^3) is required';
@@ -261,9 +243,6 @@ class _HomePageLandscapeState extends State<HomePageLandscape> {
                         contentPadding: 16.hp,
                         keyboardType: TextInputType.text,
                         hintText: 'e.g 100',
-                        onChanged: (value) {
-                          setState(() {});
-                        },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Weight of water used (kg/m^3) is required';
@@ -282,9 +261,6 @@ class _HomePageLandscapeState extends State<HomePageLandscape> {
                         contentPadding: 16.hp,
                         keyboardType: TextInputType.text,
                         hintText: 'e.g 100',
-                        onChanged: (value) {
-                          setState(() {});
-                        },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Weight of pozzolan used (kg/m^3) is required';
@@ -405,7 +381,7 @@ class _HomePagePortraitState extends State<HomePagePortrait> {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
-                    fontFamily: GoogleFonts.inter().fontFamily,
+                    fontFamily: customFontFamily,
                     color: const Color(0xFF291515),
                   ),
                 ),
@@ -423,9 +399,6 @@ class _HomePagePortraitState extends State<HomePagePortrait> {
                   contentPadding: 16.hp,
                   keyboardType: TextInputType.text,
                   hintText: 'Select e.g flyash',
-                  onChanged: (value) {
-                    setState(() {});
-                  },
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Pozzolans is required';
@@ -443,9 +416,6 @@ class _HomePagePortraitState extends State<HomePagePortrait> {
                   contentPadding: 16.hp,
                   keyboardType: TextInputType.text,
                   hintText: 'Select e.g flyash',
-                  onChanged: (value) {
-                    setState(() {});
-                  },
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Curing Age is required';
@@ -463,9 +433,6 @@ class _HomePagePortraitState extends State<HomePagePortrait> {
                   contentPadding: EdgeInsets.all(16.w),
                   keyboardType: TextInputType.text,
                   hintText: 'Select e.g 3.0',
-                  onChanged: (value) {
-                    setState(() {});
-                  },
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Water/cement ratio is required';
@@ -483,9 +450,6 @@ class _HomePagePortraitState extends State<HomePagePortrait> {
                   contentPadding: EdgeInsets.all(16.w),
                   keyboardType: TextInputType.text,
                   hintText: 'e.g 100',
-                  onChanged: (value) {
-                    setState(() {});
-                  },
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Weight of fine aggregate used (kg/m^3) is required';
@@ -503,9 +467,6 @@ class _HomePagePortraitState extends State<HomePagePortrait> {
                   contentPadding: EdgeInsets.all(16.w),
                   keyboardType: TextInputType.text,
                   hintText: 'e.g 100',
-                  onChanged: (value) {
-                    setState(() {});
-                  },
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Weight of cement (kg/m^3) is required';
@@ -523,9 +484,6 @@ class _HomePagePortraitState extends State<HomePagePortrait> {
                   contentPadding: EdgeInsets.all(16.w),
                   keyboardType: TextInputType.text,
                   hintText: 'e.g 100',
-                  onChanged: (value) {
-                    setState(() {});
-                  },
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Weight of coarse aggregate used (kg/m^3) is required';
@@ -543,9 +501,6 @@ class _HomePagePortraitState extends State<HomePagePortrait> {
                   contentPadding: EdgeInsets.all(16.w),
                   keyboardType: TextInputType.text,
                   hintText: 'e.g 100',
-                  onChanged: (value) {
-                    setState(() {});
-                  },
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Weight of water used (kg/m^3) is required';
@@ -562,9 +517,6 @@ class _HomePagePortraitState extends State<HomePagePortrait> {
                   contentPadding: EdgeInsets.all(16.w),
                   keyboardType: TextInputType.text,
                   hintText: 'e.g 100',
-                  onChanged: (value) {
-                    setState(() {});
-                  },
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Weight of pozzolan used (kg/m^3) is required';
