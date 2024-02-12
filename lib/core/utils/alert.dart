@@ -17,7 +17,7 @@ Future customAlertDialog({
       return Align(
         alignment: Alignment.center,
         child: Container(
-          width: MediaQuery.of(context).size.width / 2,
+          width: MediaQuery.of(context).size.width / 1.5,
           margin: 32.hp,
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 25.h),
           decoration: BoxDecoration(

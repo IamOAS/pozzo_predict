@@ -123,7 +123,6 @@ class AuthViewModel extends BaseViewModel {
         }
       }
     } on FirebaseAuthException catch (e) {
-      Logger().e(e);
       void handleAuthException() {
         AuthExceptionHandler.handleAuthException(e, context);
       }

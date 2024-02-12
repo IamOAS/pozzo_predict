@@ -1,6 +1,6 @@
 import 'package:pozzo_predict/core/utils/exports.dart';
-import 'package:pozzo_predict/ui/views/home/result_view.dart';
-import 'auth/auth_viewmodel.dart';
+import 'package:pozzo_predict/ui/views/result/result_view.dart';
+
 import 'auth/login_view.dart';
 import 'auth/sign_up_view.dart';
 import 'home/home_view.dart';
@@ -23,43 +23,34 @@ class _AuthViewState extends State<AuthView> {
 
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<AuthViewModel>.reactive(
-      viewModelBuilder: () => AuthViewModel(),
-      builder: (context, model, child) {
-        return Scaffold(
-          backgroundColor: const Color(0xffffffff),
-          body: SafeArea(
-            child: PageView(
-              controller: _pageController,
-              physics: const NeverScrollableScrollPhysics(),
-              children: [
-                Padding(
-                  padding: 28.hp,
-                  child: SignUpView(
-                    model: model,
-                    pageController: _pageController,
-                  ),
-                ),
-                Padding(
-                  padding: 28.hp,
-                  child: LoginView(
-                    model: model,
-                    pageController: _pageController,
-                  ),
-                ),
-                HomeView(
-                  model: model,
-                  pageController: _pageController,
-                ),
-                ResultView(
-                  model: model,
-                  pageController: _pageController,
-                ),
-              ],
+    return Scaffold(
+      backgroundColor: const Color(0xffffffff),
+      body: SafeArea(
+        child: PageView(
+          controller: _pageController,
+          physics: const NeverScrollableScrollPhysics(),
+          children: [
+            Padding(
+              padding: 28.hp,
+              child: SignUpView(
+                pageController: _pageController,
+              ),
             ),
-          ),
-        );
-      },
+            Padding(
+              padding: 28.hp,
+              child: LoginView(
+                pageController: _pageController,
+              ),
+            ),
+            HomeView(
+              pageController: _pageController,
+            ),
+            ResultView(
+              pageController: _pageController,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
