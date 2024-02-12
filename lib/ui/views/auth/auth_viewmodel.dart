@@ -40,15 +40,6 @@ class AuthViewModel extends BaseViewModel {
       }
 
       handleAuthException();
-    } catch (e) {
-      void showError() async {
-        await customAlertDialog(
-          context: context,
-          message: e.toString(),
-        );
-      }
-
-      showError();
     }
   }
 
@@ -83,15 +74,6 @@ class AuthViewModel extends BaseViewModel {
       }
 
       handleAuthException();
-    } catch (e) {
-      void showError() async {
-        await customAlertDialog(
-          context: context,
-          message: e.toString(),
-        );
-      }
-
-      showError();
     }
   }
 
@@ -129,14 +111,21 @@ class AuthViewModel extends BaseViewModel {
 
       handleAuthException();
     } catch (e) {
-      void showError() async {
-        await customAlertDialog(
-          context: context,
-          message: e.toString(),
-        );
-      }
+      if (e.toString().contains('auth/too-many-requests')) {
+        void showAlert() async {
+          await customAlertDialog(
+            isError: false,
+            context: context,
+            message: 'Kindly check your email to verify your email address before you can log in.',
+          );
 
-      showError();
+          if (pageController.page?.toInt() != 1) {
+            pageController.jumpToPage(1);
+          }
+        }
+
+        showAlert();
+      }
     }
   }
 

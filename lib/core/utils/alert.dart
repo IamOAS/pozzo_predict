@@ -7,7 +7,6 @@ Future customAlertDialog({
   VoidCallback? onConfirm,
   bool isBarrierDismissible = false,
   Widget? secondButton,
-  String? title,
   String? confirmationText,
 }) async {
   await showDialog(
@@ -49,7 +48,7 @@ Future customAlertDialog({
                   30.szbh,
                   // Title
                   Text(
-                    title ?? (isError ? 'Error!' : 'Success!'),
+                    isError ? 'Error!' : 'Success!',
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.w600,

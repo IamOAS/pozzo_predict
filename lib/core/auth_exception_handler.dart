@@ -18,6 +18,13 @@ class AuthExceptionHandler {
             message: "Weak password. Use at least 8 characters for better security.",
           );
           break;
+        } else if (e.message ==
+            "An unknown error occurred: FirebaseError: Firebase: The supplied auth credential is incorrect, malformed or has expired. (auth/invalid-credential).") {
+          await customAlertDialog(
+            context: context,
+            message: "Account not found. Please check your email or register.",
+          );
+          break;
         } else {
           await customAlertDialog(
             context: context,
