@@ -72,7 +72,7 @@ class ResultPageLandscape extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      model.prediction()?.toStringAsFixed(2) ?? '--',
+                      model.prediction()?.toStringAsFixed(4) ?? '--',
                       style: CustomTextStyle.h2.semiBold.withColor(
                         const Color(0xFF000000),
                       ),
@@ -82,23 +82,6 @@ class ResultPageLandscape extends StatelessWidget {
                 27.szbh,
                 Divider(
                   color: const Color(0xff008042).withOpacity(0.29),
-                ),
-                27.szbh,
-                // TODO: Ask Deola
-                Text(
-                  'To conclude, all parameters remaining identical, concrete compression strength will be higher for concrete made using fine aggregates having lesser finer fines, aggregates having maximum aggregate size, aggregates having rounded shape and/or aggregates having less porosity/ having density.\n\nTo conclude, all parameters remaining identical, concrete compression strength will be higher for concrete made using fine aggregates having lesser finer fines, aggregates having maximum aggregate size, aggregates having rounded shape and/or aggregates having less porosity/ having density.\n\nTo conclude, all parameters remaining identical, concrete compression strength will be higher for concrete made using fine aggregates having lesser finer fines, aggregates having maximum aggregate size, aggregates having rounded shape and/or aggregates having less porosity/ having density.\n\nTo conclude, all parameters remaining identical, concrete compression strength will be higher for concrete made using fine aggregates having lesser finer fines, aggregates having maximum aggregate size, aggregates having rounded shape and/or aggregates having less porosity/ having density.\n\nTo conclude, all parameters remaining identical, concrete compression strength will be higher for concrete made using fine aggregates having lesser finer fines, aggregates having maximum aggregate size, aggregates having rounded shape and/or aggregates having less porosity/ having density.',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                    fontFamily: customFontFamily,
-                    color: const Color(0xFF291515),
-                  ),
-                ),
-                102.szbh,
-                // TODO: Ask Deola
-                SizedBox(
-                  width: 454.w,
-                  child: const CustomButton(text: 'Download result'),
                 ),
                 30.szbh,
               ],

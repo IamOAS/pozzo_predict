@@ -100,7 +100,6 @@ class _SignUpViewState extends State<SignUpView> {
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
-                                      // TODO: Ask Deola
                                       Text(
                                         '"Unlocking the Future: Predicting Pozzolanic Cement Concrete Strength with Precision!"',
                                         style: TextStyle(
@@ -235,7 +234,6 @@ class _SignUpViewState extends State<SignUpView> {
                       26.szbh,
                     } else ...{
                       40.szbh,
-                      // TODO: Ask Deola
                       Text(
                         '"Unlocking the Future: Predicting Pozzolanic Cement Concrete Strength with Precision!"',
                         style: CustomTextStyle.medium.bold.withColor(Theme.of(context).primaryColor),

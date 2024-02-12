@@ -99,9 +99,8 @@ class _LoginViewState extends State<LoginView> {
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
-                                      // TODO: Ask Deola
                                       Text(
-                                        '"Getting the best result structures with pozzolanic Strength Predictions"',
+                                        '"Getting the Best Result Structures with Pozzolanic Strength Predictions"',
                                         style: TextStyle(
                                           fontSize: 60.sp,
                                           fontFamily: customFontFamily,
@@ -230,9 +229,8 @@ class _LoginViewState extends State<LoginView> {
                       26.szbh,
                     } else ...{
                       40.szbh,
-                      // TODO: Ask Deola
                       Text(
-                        '"Getting the best result Structures with Pozzolanic Strength Predictions"',
+                        '"Getting the Best Result Structures with Pozzolanic Strength Predictions"',
                         style: CustomTextStyle.medium.bold.withColor(Theme.of(context).primaryColor),
                         textAlign: TextAlign.center,
                       ),
